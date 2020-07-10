@@ -1,0 +1,12 @@
+This is a changelog and will be updated whenever there is an update to the game
+
+0.0.1 - First "Pre-release?":
+  Just the skeleton for the game, some features
+  Scavenge button
+  Resource viewer
+  Wood, Food, and scrap
+  save, loading, and clearing Scavenge
+  info box
+  Home and wander tabs, wander tab has no content
+  added farm button unlocked at 50 wood, does nothing yet
+  Added info boxes
