@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class = "Html" id = "Html">
+  <head>
+    <title>
+      Lost
+    </title>
+  </head>
+  <body class = "Body" id = "Body">
+    <div class = "LoadingDiv" id = "LoadingDiv">
+      Loading
+      <hr class = "LoadingBar" id = "LoadingBar">
+      <div class = "LoadingInfo" id = "LoadingInfo">
+
+      </div>
+    </div>
+    <div class = "Main" id = "Main">
+      <div class = "ResourceManager" id = "ResourceManager">
+        <div class = "FoodDiv" id = "FoodDiv">
+          Food:
+          <span class = "Food" id = "Food">
+            0
+          </span>
+          <span class = "FoodInfo" id = "FoodInfo">
+
+          </span>
+        </div>
+        <div class = "WoodDiv" id = "WoodDiv">
+          Wood:
+          <span class = "Wood" id = "Wood">
+            0
+          </span>
+          <span class = "WoodInfo" id = "WoodInfo">
+
+          </span>
+        </div>
+        <div class = "ScrapDiv" id = "ScrapDiv">
+          Scrap:
+          <span class = "Scrap" id = "Scrap">
+            0
+          </span>
+          <span class = "ScrapInfo" id = "ScrapInfo">
+
+          </span>
+        </div>
+      </div>
+      <div class = "ControlPanel" id = "ControlPanel">
+        <div class = "Tab">
+          <button class = "HomeLink" id = "HomeLink" onclick = "OpenHome()">
+            Home
+          </button>
+          <button class = "WanderLink" id = "WanderLink" onclick = "OpenWander()">
+            Wander
+          </button>
+        </div>
+        <br>
+        <div class = "HomeControls" id = "HomeControls">
+          <div class = "HomeRow1" id = "HomeRow1">
+            <div class = "ScavengeDiv" id = "ScavengeDiv">
+              <button class = "ScavengeButton" id = "ScavengeButton" onclick = "Scavenge()" onmouseover = "ScavengeInfo(1)" onmouseout = "ScavengeInfo(0)">
+                Scavenge for Scraps
+              </button>
+              <div class = "ScavengeButtonInfo" id = "ScavengeButtonInfo">
+
+              </div>
+            </div>
+          </div>
+          <div class = "HomeRow2" id = "HomeRow2">
+            <div class = "FarmDiv" id = "FarmDiv">
+              <button class = "FarmButton" id = "FarmButton" onclick = "BuyFarm()" onmouseover = "FarmInfo(1)" onmouseout = "FarmInfo(0)">
+                Farm
+              </button>
+              <div class = "FarmButtonInfo" id = "FarmButtonInfo">
+              </div>
+            </div>
+          </div>
+          <div class = "HomeRow3" id = "HomeRow3">
+
+          </div>
+        </div>
+        <div class = "WanderControls" id = "WanderControls">
+        </div>
+      </div>
+      <div class = "RightBox" id = "RightBox">
+        <div class = "InfoBox" id = "InfoBox">
+        </div>
+        <button class = "SaveButton" id = "SaveButton" onclick = "Save()">
+          Save
+        </button>
+        <button class = "ClearButton" id = "ClearButton" onclick = "ClearSave()">
+          Clear
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src = "javascript.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+</html>
