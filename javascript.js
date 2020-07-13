@@ -320,7 +320,7 @@ function WanderingCooldown(){
   console.log(WanderCooldown);
   if(WanderCooldown > 0){
     console.log("woo");
-    document.getElementById("WanderCooldown").style.width = (31 - ((31/50) * WanderCooldown)).toString() + "%";
+    document.getElementById("WanderCooldown").style.width = (31 - ((31/100) * WanderCooldown)).toString() + "%";
     WanderCooldown -= 1;
     if(WanderCooldown > 0){
       setTimeout(WanderingCooldown, 50);

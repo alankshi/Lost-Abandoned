@@ -1,15 +1,10 @@
 This is a changelog and will be updated whenever there is an update to the game
 
-0.0.1 - 7/10/2020:
-  Just the skeleton for the game, some features
-  Added Scavenge button
-  Added Resource viewer
-  Added wood, scrap, and Food
-  Added save and clear button
-  Added info box
-  Home and wander tabs, wander tab has no content
-  added farm button unlocked at 50 wood, does nothing yet
-  Added info boxes
+0.0.2.5 - 7/12/2020:
+  Forgot some things in last update so here they Are
+  put line breaks in between skills in stats page
+  made it so scavenge cool-down bar immediately starts moving instead of waiting 2.5 seconds
+  Just a tiny little update, basically no new features but I like to put everything I do here
 
 0.0.2 - 7/12/2020:
   Made farm button actually do something
@@ -23,3 +18,14 @@ This is a changelog and will be updated whenever there is an update to the game
   Added farming tab
   Added Stats tab
   Updated Stats tab to include skills, will add other stats later
+
+0.0.1 - 7/10/2020:
+  Just the skeleton for the game, some features
+  Added Scavenge button
+  Added Resource viewer
+  Added wood, scrap, and Food
+  Added save and clear button
+  Added info box
+  Home and wander tabs, wander tab has no content
+  added farm button unlocked at 50 wood, does nothing yet
+  Added info boxes
