@@ -29,3 +29,4 @@ This is a changelog and will be updated whenever there is an update to the game
   Home and wander tabs, wander tab has no content
   added farm button unlocked at 50 wood, does nothing yet
   Added info boxes
+  Added starving which divides all your production by 4
