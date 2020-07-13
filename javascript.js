@@ -59,9 +59,18 @@ var Farms = 0;
 var FarmFoodProduction = 0.25;
 var FarmPrice = 50;
 var FarmingUnlocked = 0;
-var PriceIncrease = 1.25;
-var WanderCooldown = 100;
+var PriceIncrease = 1.1;
+var WanderCooldown = 0;
 var WanderReady = 1;
+var WanderBaseCooldown = 100;
+var TimesWandered = 0;
+var FarmingLevel = 0;
+var WoodcuttingLevel = 0;
+var CombatLevel = 0;
+var FishingLevel = 0;
+var CraftingLevel = 0;
+var ResearchLevel = 0;
+var Playtime = 0;
 
 // Defining Functions
 LoadingInfoId.innerHTML = "Forging Tools";
@@ -109,6 +118,16 @@ function Save(){
   SaveItem(FarmPrice, "FarmPrice");
   SaveItem(FarmingUnlocked, "FarmingUnlocked");
   SaveItem(PriceIncrease, "PriceIncrease");
+  SaveItem(WanderBaseCooldown, "WanderBaseCooldown");
+  SaveItem(TimesWandered, "TimesWandered");
+  SaveItem(WoodcuttingLevel, "WoodcuttingLevel");
+  SaveItem(CombatLevel, "CombatLevel");
+  SaveItem(FishingLevel, "FishingLevel");
+  SaveItem(CraftingLevel, "CraftingLevel");
+  SaveItem(FarmingLevel, "FarmingLevel");
+  SaveItem(ResearchLevel, "ResearchLevel");
+  SaveItem(Playtime, "Playtime");
+
   console.log("Game Saved");
   InfoAdd("Game Saved");
 }
@@ -145,6 +164,61 @@ function OpenStats(){
   document.getElementById("FarmingControls").style.visibility = "hidden";
   document.getElementById("StatsControls").style.visibility = "visible";
 }
+function UpdateStats(){
+  document.getElementById("FarmingStatsLevel").innerHTML = FarmingLevel.toString();
+  document.getElementById("WoodcuttingStatsLevel").innerHTML = WoodcuttingLevel.toString();
+  document.getElementById("CombatStatsLevel").innerHTML = CombatLevel.toString();
+  document.getElementById("FishingStatsLevel").innerHTML = FishingLevel.toString();
+  document.getElementById("CraftingStatsLevel").innerHTML = CraftingLevel.toString();
+  document.getElementById("ResearchStatsLevel").innerHTML = ResearchLevel.toString();
+  document.getElementById("TimesWanderedStat").innerHTML = TimesWandered.toString();
+  document.getElementById("PlaytimeStat").innerHTML = ConvertPlayTime(Playtime);
+}
+function ConvertPlayTime(Time){
+  ConvertedHours = Math.floor((Time / 60) / 60);
+  Time -= (ConvertedHours * 60) * 60;
+  ConvertedMinutes = Math.floor(Time/60);
+  Time -= ConvertedMinutes * 60;
+  ConvertedSeconds = Time;
+
+  if(ConvertedHours > 1 || ConvertedHours == 0){
+    if(ConvertedMinutes > 1 || ConvertedMinutes == 0){
+      if(ConvertedSeconds > 1 || ConvertedSeconds == 0){
+        ConvertedTime = ConvertedHours.toString() + " hours, " + ConvertedMinutes.toString() + " minutes, and " + ConvertedSeconds.toString() + " seconds";
+      }
+      if(ConvertedSeconds == 1){
+        ConvertedTime = ConvertedHours.toString() + " hours, " + ConvertedMinutes.toString() + " minutes, and " + ConvertedSeconds.toString() + " second";
+      }
+    }
+    if(ConvertedMinutes == 1){
+      if(ConvertedSeconds > 1 || ConvertedSeconds == 0){
+        ConvertedTime = ConvertedHours.toString() + " hours, " + ConvertedMinutes.toString() + " minute, and " + ConvertedSeconds.toString() + " seconds";
+      }
+      if(ConvertedSeconds == 1){
+        ConvertedTime = ConvertedHours.toString() + " hours, " + ConvertedMinutes.toString() + " minute, and " + ConvertedSeconds.toString() + " second";
+      }
+    }
+  }
+  if(ConvertedHours == 1){
+    if(ConvertedMinutes > 1 || ConvertedMinutes == 0){
+      if(ConvertedSeconds > 1 || ConvertedSeconds == 0){
+        ConvertedTime = ConvertedHours.toString() + " hour, " + ConvertedMinutes.toString() + " minutes, and " + ConvertedSeconds.toString() + " seconds";
+      }
+      if(ConvertedSeconds == 1){
+        ConvertedTime = ConvertedHours.toString() + " hour, " + ConvertedMinutes.toString() + " minutes, and " + ConvertedSeconds.toString() + " second";
+      }
+    }
+    if(ConvertedMinutes == 1){
+      if(ConvertedSeconds > 1 || ConvertedSeconds == 0){
+        ConvertedTime = ConvertedHours.toString() + " hour, " + ConvertedMinutes.toString() + " minute, and " + ConvertedSeconds.toString() + " seconds";
+      }
+      if(ConvertedSeconds == 1){
+        ConvertedTime = ConvertedHours.toString() + " hour, " + ConvertedMinutes.toString() + " minute, and " + ConvertedSeconds.toString() + " second";
+      }
+    }
+  }
+  return(ConvertedTime);
+}
 function Scavenge(){
   ScavengeRoll = Math.floor((Math.random() * ScavengeUnlocks) + 1);
   if(ScavengeRoll == 1){
@@ -172,6 +246,7 @@ function Refresh(){
   WoodInfoId.innerHTML = WoodPerSecond.toString() + " / tick";
   ScrapId.innerHTML = Scrap;
   ScrapInfoId.innerHTML = ScrapPerSecond.toString() + " / tick";
+  UpdateStats();
 }
 function BuyFarm(){
   if(Wood >= FarmPrice){
@@ -317,17 +392,14 @@ function ScrapCalc(){
   Scrap += ScrapPerSecond
 }
 function WanderingCooldown(){
-  console.log(WanderCooldown);
   if(WanderCooldown > 0){
-    console.log("woo");
-    document.getElementById("WanderCooldown").style.width = (31 - ((31/100) * WanderCooldown)).toString() + "%";
+    document.getElementById("WanderCooldown").style.width = (31 - ((31/WanderBaseCooldown) * WanderCooldown)).toString() + "%";
     WanderCooldown -= 1;
     if(WanderCooldown > 0){
       setTimeout(WanderingCooldown, 50);
     }
   }
   if(WanderCooldown <= 0){
-    WanderCooldown = 100;
     WanderReady = 1;
     document.getElementById("WanderCooldown").style.width = "31%";
     return;
@@ -338,6 +410,8 @@ function Wander(){
     InfoAdd("You are tired to keep wandering");
   }
   if(WanderReady == 1){
+    WanderCooldown = WanderBaseCooldown;
+    TimesWandered += 1;
     WanderingCooldown();
     WanderReady = 0;
   }
@@ -360,6 +434,7 @@ function Main(){
   //Final Commands
   Refresh();
   setTimeout(Main, 1000);
+  Playtime += 1;
 }
 
 // Loading Save
@@ -394,6 +469,15 @@ LoadItem("FarmFoodProduction");
 LoadItem("FarmPrice");
 LoadItem("FarmingUnlocked");
 LoadItem("PriceIncrease");
+LoadItem("WanderBaseCooldown");
+LoadItem("TimesWandered");
+LoadItem("FarmingLevel");
+LoadItem("WoodcuttingLevel");
+LoadItem("CombatLevel");
+LoadItem("FishingLevel");
+LoadItem("CraftingLevel");
+LoadItem("ResearchLevel");
+LoadItem("Playtime");
 
 //Showing Game ELements
 LoadingInfoId.innerHTML = "Revealing Secrets";

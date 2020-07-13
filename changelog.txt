@@ -1,12 +1,23 @@
 This is a changelog and will be updated whenever there is an update to the game
 
-0.0.2.5 - 7/12/2020:
+0.3.0 - 7/13/2020:
+  Changed price multiplier of buildings from 1.25 to 1.1
+  Added TimesWandered stat
+  Added Playtime stat
+  Added Version stat
+  made all stats actually update (only playtime and timeswandered update right now because there is no way to inrcrease skill level)
+  Made playtime stat show up as hours, minutes, and seconds instead of just a really big seconds number
+  Changed the version numbers because they were wrong
+  Next update will probably be 1.0.0, and it should have wandering implemented (not fully because there will probably be a lot more updates later), and maybe skills implemented but that probably will come later, one at a time in minor updates
+
+0.2.5.0 - 7/12/2020:
   Forgot some things in last update so here they Are
   put line breaks in between skills in stats page
-  made it so scavenge cool-down bar immediately starts moving instead of waiting 2.5 seconds
+  Added some stuff to the 0.0.1 changelog because it wasn't complete
+  made it so scavenge cooldown bar immediately starts moving instead of waiting 2.5 seconds
   Just a tiny little update, basically no new features but I like to put everything I do here
 
-0.0.2 - 7/12/2020:
+0.2.0 - 7/12/2020:
   Made farm button actually do something
   Farms unlock the farming tab
   Text now cuts off at bottom of screen before it overlaps with the buttons
@@ -14,12 +25,12 @@ This is a changelog and will be updated whenever there is an update to the game
   Did some more optimization to make future updates easier
   Fixed tabs (before they were off the page but they had nothing so you couldn't tell)
   Added Wander button, no functionality
-  Added wander button cool-down bar, button activates animation (the animation took way too long to make), doesn't do anything else
+  Added wander button cooldown bar, button activates animation (the animation took way too long to make), doesn't do anything else
   Added farming tab
   Added Stats tab
   Updated Stats tab to include skills, will add other stats later
 
-0.0.1 - 7/10/2020:
+0.1.0 - 7/10/2020:
   Just the skeleton for the game, some features
   Added Scavenge button
   Added Resource viewer
