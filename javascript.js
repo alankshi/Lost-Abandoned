@@ -58,6 +58,10 @@ var FarmUnlocked = 0;
 var Farms = 0;
 var FarmFoodProduction = 0.25;
 var FarmPrice = 50;
+var FarmingUnlocked = 0;
+var PriceIncrease = 1.25;
+var WanderCooldown = 100;
+var WanderReady = 1;
 
 // Defining Functions
 LoadingInfoId.innerHTML = "Forging Tools";
@@ -103,6 +107,8 @@ function Save(){
   SaveItem(Farms, "Farms");
   SaveItem(FarmFoodProduction, "FarmFoodProduction");
   SaveItem(FarmPrice, "FarmPrice");
+  SaveItem(FarmingUnlocked, "FarmingUnlocked");
+  SaveItem(PriceIncrease, "PriceIncrease");
   console.log("Game Saved");
   InfoAdd("Game Saved");
 }
@@ -117,13 +123,27 @@ function ClearSave(){
 }
 function OpenHome(){
   HomeControlsId.style.visibility = "visible";
-  ScavengeButtonId.style.visibility = "visible";
   WanderControlsId.style.visibility = "hidden";
+  document.getElementById("FarmingControls").style.visibility = "hidden";
+  document.getElementById("StatsControls").style.visibility = "hidden";
 }
 function OpenWander(){
   HomeControlsId.style.visibility = "hidden";
-  ScavengeButtonId.style.visibility = "hidden";
   WanderControlsId.style.visibility = "visible";
+  document.getElementById("FarmingControls").style.visibility = "hidden";
+  document.getElementById("StatsControls").style.visibility = "hidden";
+}
+function OpenFarming(){
+  HomeControlsId.style.visibility = "hidden";
+  WanderControlsId.style.visibility = "hidden";
+  document.getElementById("FarmingControls").style.visibility = "visible";
+  document.getElementById("StatsControls").style.visibility = "hidden";
+}
+function OpenStats(){
+  HomeControlsId.style.visibility = "hidden";
+  WanderControlsId.style.visibility = "hidden";
+  document.getElementById("FarmingControls").style.visibility = "hidden";
+  document.getElementById("StatsControls").style.visibility = "visible";
 }
 function Scavenge(){
   ScavengeRoll = Math.floor((Math.random() * ScavengeUnlocks) + 1);
@@ -154,7 +174,15 @@ function Refresh(){
   ScrapInfoId.innerHTML = ScrapPerSecond.toString() + " / tick";
 }
 function BuyFarm(){
-
+  if(Wood >= FarmPrice){
+    Farms += 1;
+    Wood -= FarmPrice;
+    FarmPrice = Math.round(FarmPrice * PriceIncrease);
+    InfoAdd("You built a farm");
+  }
+  else{
+    InfoAdd("You don't have enough resources");
+  }
 }
 function ScavengeInfo(Toggle){
   document.getElementById("ScavengeButtonInfo").innerHTML = "Scavenge for materials in the dirt <hr>" + "Base: " + ScavengeBase + "<br>Eff: " + ScavengeEff;
@@ -166,7 +194,7 @@ function ScavengeInfo(Toggle){
   }
 }
 function FarmInfo(Toggle){
-  document.getElementById("FarmButtonInfo").innerHTML = "A farm used for growing food <hr> Wood: " + FarmPrice + "<hr>" + FarmFoodProduction + " Food / tick <br>" + " Unlocks Farming";
+  document.getElementById("FarmButtonInfo").innerHTML = "A farm used for growing food <br> You have " + Farms + " farms <hr> Wood: " + FarmPrice + "<hr>" + FarmFoodProduction + " Food / tick <br>" + " Unlocks Farming";
   if(Toggle == 1){
     document.getElementById("FarmButtonInfo").style.display = "block";
   }
@@ -198,6 +226,10 @@ function Unlocks(){
     document.getElementById("FarmButton").style.display = "block";
     FarmUnlcked = 1;
   }
+  if(FarmingUnlocked == 0 && Farms >= 1){
+    document.getElementById("FarmingLink").style.display = "inline-block";
+    FarmingUnlocked = 1;
+  }
 }
 function PreUnlocks(){
   if(WoodUnlocked == 1){
@@ -208,6 +240,9 @@ function PreUnlocks(){
   }
   if(ScrapUnlocked == 1){
     document.getElementById("ScrapDiv").style.display = "block";
+  }
+  if(FarmingUnlocked == 1){
+    document.getElementById("FarmingLink").style.display = "inline-block";
   }
 }
 function ScavengeCalc(){
@@ -281,6 +316,32 @@ function ScrapCalc(){
 
   Scrap += ScrapPerSecond
 }
+function WanderingCooldown(){
+  console.log(WanderCooldown);
+  if(WanderCooldown > 0){
+    console.log("woo");
+    document.getElementById("WanderCooldown").style.width = (31 - ((31/50) * WanderCooldown)).toString() + "%";
+    WanderCooldown -= 1;
+    if(WanderCooldown > 0){
+      setTimeout(WanderingCooldown, 50);
+    }
+  }
+  if(WanderCooldown <= 0){
+    WanderCooldown = 100;
+    WanderReady = 1;
+    document.getElementById("WanderCooldown").style.width = "31%";
+    return;
+  }
+}
+function Wander(){
+  if(WanderReady == 0){
+    InfoAdd("You are tired to keep wandering");
+  }
+  if(WanderReady == 1){
+    WanderingCooldown();
+    WanderReady = 0;
+  }
+}
 function Main(){
   ProductionCalculations();
 
@@ -331,6 +392,8 @@ LoadItem("FarmUnlocked");
 LoadItem("Farms");
 LoadItem("FarmFoodProduction");
 LoadItem("FarmPrice");
+LoadItem("FarmingUnlocked");
+LoadItem("PriceIncrease");
 
 //Showing Game ELements
 LoadingInfoId.innerHTML = "Revealing Secrets";

@@ -51,6 +51,12 @@
           <button class = "WanderLink" id = "WanderLink" onclick = "OpenWander()">
             Wander
           </button>
+          <button class = "FarmingLink" id = "FarmingLink" onclick = "OpenFarming()">
+            Farming
+          </button>
+          <button class = "StatsLink" id = "StatsLink" onclick = "OpenStats()">
+            Stats
+          </button>
         </div>
         <br>
         <div class = "HomeControls" id = "HomeControls">
@@ -74,14 +80,53 @@
             </div>
           </div>
           <div class = "HomeRow3" id = "HomeRow3">
-
           </div>
         </div>
         <div class = "WanderControls" id = "WanderControls">
+          <hr class = "WanderCooldown" id = "WanderCooldown">
+          <button class = "WanderButton" id = "WanderButton" onclick = "Wander()">
+            Wander
+          </button>
+        </div>
+        <div class = "FarmingControls" id = "FarmingControls">
+
+        </div>
+        <div class = "StatsControls" id = "StatsControls">
+          <div class = "SkillStatsDiv" id = "SkillStatsDiv">
+            <div class = "SkillStatsTitle" id = "SkillStatsTitle">
+              Skills
+            </div>
+            Farming:
+            <span class = "FarmingStatsLevel" id = "FarmingLevel">
+              0
+            </span>
+            Woodcutting:
+            <span class = "WoodcuttingStatsLevel" id = "WoodcuttingLevel">
+              0
+            </span>
+            Combat:
+            <span class = "CombatStatsLevel" id = "CombatLevel">
+              0
+            </span>
+            Fishing:
+            <span class = "FishingStatsLevel" id = "FishingLevel">
+              0
+            </span>
+            Crafting:
+            <span class = "FishingStatsLevel" id = "FishingLevel">
+              0
+            </span>
+            Research:
+            <span class = "ResearchStatsLevel" id = "ResearchLevel">
+              0
+            </span>
+          </div>
         </div>
       </div>
       <div class = "RightBox" id = "RightBox">
-        <div class = "InfoBox" id = "InfoBox">
+        <div class = "InfoBoxBox" id = "InfoBoxBox">
+          <div class = "InfoBox" id = "InfoBox">
+          </div>
         </div>
         <button class = "SaveButton" id = "SaveButton" onclick = "Save()">
           Save

@@ -102,6 +102,7 @@
   display: flex;
   width: 100%;
   height: 100%;
+  justify-content: center;
 }
 
 .HomeRow1{
@@ -135,7 +136,13 @@
 }
 
 .WanderControls{
-  display: none;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 100%;
+  visibility: hidden;
+  justify-content: center;
 }
 
 .FoodInfo{
@@ -230,4 +237,102 @@
 
 .LoadingBar{
   width: 0%;
+}
+
+.FarmButton{
+  color: white;
+  background: black;
+  border: white 1px solid;
+  width: 94%;
+  height: 5%;
+  outline: none;
+  font-family: "Noto Sans";
+  display: none;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.FarmButton:active{
+  background: rgb(25, 25, 25);
+}
+
+.InfoBoxBox{
+  height: 95%;
+  overflow: hidden;
+}
+
+.WanderButton{
+  display: block;
+  background: black;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  height: 5%;
+  width: 32%;
+  position: absolute;
+  top: 33%;
+}
+
+.WanderButton:active{
+  background: rgb(25, 25, 25);
+}
+
+.FarmingControls{
+  position: relative;
+  bottom: 200%;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.WanderCooldown{
+  position: absolute;
+  top: 30%;
+  width: 31%;
+}
+
+.FarmingLink{
+  font-size: 110%;
+  font-family: "Noto Sans";
+  color: white;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.FarmingLink:hover{
+  text-decoration: underline;
+}
+
+.StatsLink{
+  font-size: 110%;
+  font-family: "Noto Sans";
+  color: white;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.StatsLink:hover{
+  text-decoration: underline;
+}
+
+.StatsControls{
+  position: relative;
+  bottom: 300%;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.SkillStatsDiv{
+
+}
+
+.SkillStatsTitle{
+  font-size: 150%;
+}
+
+.FarmingStatsLevel{
+
 }

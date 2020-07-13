@@ -1,12 +1,25 @@
 This is a changelog and will be updated whenever there is an update to the game
 
-0.0.1 - First "Pre-release?":
+0.0.1 - 7/10/2020:
   Just the skeleton for the game, some features
-  Scavenge button
-  Resource viewer
-  Wood, Food, and scrap
-  save, loading, and clearing Scavenge
-  info box
+  Added Scavenge button
+  Added Resource viewer
+  Added wood, scrap, and Food
+  Added save and clear button
+  Added info box
   Home and wander tabs, wander tab has no content
   added farm button unlocked at 50 wood, does nothing yet
   Added info boxes
+
+0.0.2 - 7/12/2020:
+  Made farm button actually do something
+  Farms unlock the farming tab
+  Text now cuts off at bottom of screen before it overlaps with the buttons
+  Changed the farm info box a bit to include the amount of farms
+  Did some more optimization to make future updates easier
+  Fixed tabs (before they were off the page but they had nothing so you couldn't tell)
+  Added Wander button, no functionality
+  Added wander button cool-down bar, button activates animation (the animation took way too long to make), doesn't do anything else
+  Added farming tab
+  Added Stats tab
+  Updated Stats tab to include skills, will add other stats later
