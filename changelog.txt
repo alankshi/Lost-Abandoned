@@ -1,5 +1,37 @@
 This is a changelog and will be updated whenever there is an update to the game
 
+0.4.1 - Wandering + Combat - Date TBD:
+  Ways to increase damage, health and other stats will come in the next update, which will probably intorduce the farming skill. Other skills will come after
+  Added Enemy Rewards
+  Added Health Regeneration and Health Regeneration Stat
+  Added Dodge Chance Stat
+  There are a total of 10 enemies, with different rewards and stats
+  Fixed double percentage bug
+  Added Combat
+  Actually not 1.0.0, 1.0.0 will be the full release (there will still be updates after)
+  Added Wandering (mostly, will still be updates later probably):
+    You can now use the wander button, which has a base of 5 second cooldown
+    every time you press it, it will roll a random number which will determine what happens
+    You can either find nothing, find some resources, find special people, or find things to fight
+    When you find resources while wandering, it is based on your current resources so its exponential
+  Added new STATS, which are used when fighting things while wandering and also will be used in research, which will be implemented later
+  Updated stats page to include new stats
+  Fixed bug where farming is always unlocked
+  Made Farm information update whenever you buy a farm
+  Fixed bug where the farm wouldn't be unlocked when you loaded a save
+  Fixed bug where all saves would be saved as integers instead of floats
+  Added Armor and weapon display
+  Added Damage Reduction, Attack Speed, and Attack Damage display
+  Added Enemy Health, Health Bar, and Name Display
+  Added Wander Control Buttons (yes/no)
+  Made combat displays unlockable
+  Fixed B I G bug where the whole game would be shifted up and became unplayable
+  Fixed InfoBox Cutoff
+  Fixed bug where Combat Displays would always be visible
+  Added EnemiesEncountered and EnemiesDefeated Stat
+  Added some enemies
+  Added a lil bottom page card
+
 0.3.0 - 7/13/2020:
   Changed price multiplier of buildings from 1.25 to 1.1
   Added TimesWandered stat

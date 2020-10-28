@@ -66,7 +66,7 @@
                 Scavenge for Scraps
               </button>
               <div class = "ScavengeButtonInfo" id = "ScavengeButtonInfo">
-
+                yes
               </div>
             </div>
           </div>
@@ -87,11 +87,148 @@
           <button class = "WanderButton" id = "WanderButton" onclick = "Wander()">
             Wander
           </button>
+          <br>
+          <hr class = "HealthBar" id = "HealthBar">
+          <div class = "CurrentHealthDiv" id = "CurrentHealthDiv">
+            Health:
+            <span class = "CurrentHealth" id = "CurrentHealth">
+              100
+            </span>
+          </div>
+          <div class = "WeaponDisplay" id = "WeaponDisplay">
+            Weapon:
+            <span class = "CurrentWeapon" id = "CurrentWeapon">
+              None
+            </span>
+          </div>
+          <div class = "ArmorDisplay" id = "ArmorDisplay">
+            Armor:
+            <span class = "CurrentArmor" id = "CurrentArmor">
+              None
+            </span>
+          </div>
+          <div class = "AttackDisplay" id = "AttackDisplay">
+            <div class = "AttackDamageDiv" id = "AttackDamageDiv">
+              Attack Damage:
+              <span class = "AttackDamage" id = "AttackDamage">
+                1
+              </span>
+            </div>
+            <div class = "AttackSpeedDiv" id = "AttackSpeedDiv">
+              Attack Speed:
+              <span class = "AttackSpeed" id = "AttackSpeed">
+                0.5
+              </span>
+            </div>
+          </div>
+          <div class = "DamageReductionDisplay" id = "DamageReductionDisplay">
+            Damage Reduction:
+            <span class = "DamageReduction" id = "DamageReduction">
+              0
+            </span>
+            %
+          </div>
+          <div class = "DodgeChanceDisplay" id = "DodgeChanceDisplay">
+            Dodge Chance:
+            <span class = "DodgeChance" id = "DodgeChance">
+              0
+            </span>
+            %
+          </div>
+          <div class = "EnemyDisplay" id = "EnemyDisplay">
+            <div class = "EnemyNameDiv" id = "EnemyNameDiv">
+              Enemy:
+              <span class = "EnemyName" id = "EnemyName">
+                None
+              </span>
+            </div>
+            <br>
+            <div class = "EnemyHealthDiv" id = "EnemyHealthDiv">
+              Enemy Health:
+              <span class = "EnemyHealth" id = "EnemyHealth">
+                0
+              </span>
+              <hr class = "EnemyHealthBar" id = "EnemyHealthBar">
+            </div>
+            <br>
+            <div class = "EnemyAttackDiv" id = "EnemyAttackDiv">
+              Enemy Attack:
+              <span class = "EnemyAttack" id = "EnemyAttack">
+                1
+              </span>
+            </div>
+            <div class = "EnemyAttackSpeedDiv" id = "EnemyAttackSpeedDiv">
+              Enemy Attack Speed:
+              <span class = "EnemyAttackSpeed" id = "EnemyAttackSpeed">
+                0.5
+              </span>
+            </div>
+            <br>
+            <div class = "EnemyDamageReductionDiv" id = "EnemyDamageReductionDiv">
+              Enemy Damage Reduction:
+              <span class = "EnemyDamageReduction" id = "EnemyDamageReduction">
+                0
+              </span>
+              %
+            </div>
+            <div class = "EnemyDodgeChanceDiv" id = "EnemyDodgeChanceDiv">
+              Enemy Dodge Chance:
+              <span class = "EnemyDodgeChance" id = "EnemyDodgChance">
+                0
+              </span>
+              %
+            </div>
+          </div>
+          <div class = "WanderControlButtonsDiv" id = "WanderControlButtonsDiv">
+            <button class = "WanderYesButton" id = "WanderYesButton">
+              Yes
+            </button>
+            <div class = "WanderButtonDivider" id = "WanderButtonDivider">
+            </div>
+            <button class = "WanderNoButton" id = "WanderNoButton">
+              No
+            </button>
+          </div>
         </div>
         <div class = "FarmingControls" id = "FarmingControls">
 
         </div>
         <div class = "StatsControls" id = "StatsControls">
+          <div class = "StatsStatsDiv" id = "StatsStatsDiv">
+            <div class = "StatsStatsTitle" id = "StatsStatsTitle">
+              Personal Stats
+            </div>
+            Max Health:
+            <span class = "MaxHealthStat" id = "MaxHealthStat">
+              0
+            </span>
+            <br>
+            Health Regeneration:
+            <span class = "HealthRegenStat" id = "HealthRegenStat">
+              0
+            </span>
+            <br>
+            Strength:
+            <span class = "StrengthStat" id = "StrengthStat">
+              0
+            </span>
+            <br>
+            Agility:
+            <span class = "AgilityStat" id = "AgilityStat">
+              0
+            </span>
+            <br>
+            Intelligence:
+            <span class = "IntelligenceStat" id = "IntelligenceStat">
+              0
+            </span>
+            <br>
+            Defence:
+            <span class = "DefenceStat" id = "DefenceStat">
+              0
+            </span>
+          </div>
+          <br>
           <div class = "SkillStatsDiv" id = "SkillStatsDiv">
             <div class = "SkillStatsTitle" id = "SkillStatsTitle">
               Skills
@@ -135,6 +272,16 @@
             <span class = "TimesWanderedStat" id = "TimesWanderedStat">
               0
             </span>
+            <br>
+            Enemies Encountered:
+            <span class = "EnemiesEncounteredStat" id = "EnemiesEncounteredStat">
+              0
+            </span>
+            <br>
+            Enemies Defeated:
+            <span class = "EnemiesDefeatedStat" id = "EnemiesDefeatedStat">
+              0
+            </span>
           </div>
           <br>
           <div class = "MiscStatsDiv" id = "MiscStatsDiv">
@@ -146,7 +293,7 @@
               0
             </span>
             <br>
-            Version: 0.3.0
+            Version: 0.4.1
           </div>
         </div>
       </div>
@@ -163,7 +310,12 @@
         </button>
       </div>
     </div>
+    <div class = "PageBottom" id = "PageBottom">
+      Made by BinaryKiwi
+      <br>
+      Sorry for the annoying scroll bar, the whole game broke when I removed it bruh
+    </div>
   </body>
-  <script src = "javascript.js"></script>
   <link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+  <script src = "javascript.js"></script>
 </html>
