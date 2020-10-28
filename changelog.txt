@@ -1,6 +1,6 @@
 This is a changelog and will be updated whenever there is an update to the game
 
-0.4.1 - Wandering + Combat - Date TBD:
+0.4.1 - Wandering + Combat - 10/28/2020:
   Ways to increase damage, health and other stats will come in the next update, which will probably intorduce the farming skill. Other skills will come after
   Added Enemy Rewards
   Added Health Regeneration and Health Regeneration Stat
