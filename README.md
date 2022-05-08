@@ -1,5 +1,5 @@
 # Lost
 
-no longer being worked on, new version is in progress
+no longer being worked on :(
 
 https://binarykiwiz.github.io/Lost/
